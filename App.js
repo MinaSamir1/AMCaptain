@@ -1,13 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+
+import Home from './screens/home/Home';
+import { SIZES } from './constants';
+import Welcome from './components/welcome/Welcome';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={{
+        flex: 1,
+        padding: SIZES.medium,
+        paddingTop: 30
+    }}>
+        <Welcome />
+        <Home />
     </View>
-  );
+</ScrollView>
+);
 }
 
 const styles = StyleSheet.create({
