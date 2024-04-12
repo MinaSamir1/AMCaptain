@@ -1,12 +1,12 @@
 import axios from 'axios';
 import getToken from "./ClientID";
 
-async function fetch_AllProducts() {
+async function fetch_AllProducts({ ID , offset}) {
   try {
-    const COLLECTION_ID = "3a6fd253-442c-4bb2-32f7-88e01a0ef1d8";
+    const COLLECTION_ID = ID;
     const ACCTOKEN = await getToken();
     const request_data = { 
-      query: { paging: { limit: 100, offset: 0 },
+      query: { paging: { limit: 100, offset: offset },
       filter: `{"collections.id": { "$hasSome": ["${COLLECTION_ID}"]} }`
     }};
 
