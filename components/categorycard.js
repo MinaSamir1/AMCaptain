@@ -20,14 +20,13 @@ const CategoryCard = ({ item, handleCardPress}) => {
         resizeMode='stretch' />
     
     <LinearGradient
-      colors= {['transparent', 'rgba(23, 23, 23, 0.8)', 'rgba(23, 23, 23, 1)']}
+      colors= {['transparent', 'rgba(23, 23, 23, 0.6)', 'rgba(23, 23, 23, 0.8)', 'rgba(23, 23, 23, 1)']}
       style = {{width: '100%', height: '50%', position: 'absolute', bottom: 0}}
       start = {{ x: 0.5, y: 0.2 }}
       end   = {{ x: 0.5, y: 1 }} />
 
       <Text style={ {position: 'absolute', bottom: 0, color: 'white', fontSize: 20, 
-                     padding: 10, width: '100%', 
-                    textAlign: 'center'} }
+                      padding: 10, width: '100%', textAlign: 'center', fontStyle: 'italic'} }
             numberOfLines={1} >
         {item.name}
       </Text>

@@ -1,29 +1,20 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-
+import Category from './screens/category/category';
 import Home from './screens/home/Home';
-import { SIZES } from './constants';
-import Welcome from './components/welcome/Welcome';
+import { NavigationContainer } from '@react-navigation/native';
+import Product from './screens/product/product';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-    <View style={{
-        flex: 1,
-        padding: SIZES.medium,
-        paddingTop: 30
-    }}>
-        <Welcome />
-        <Home />
-    </View>
-</ScrollView>
-);
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Category" component={Category} />
+        <Stack.Screen name="Product" component={Product} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
